@@ -4,11 +4,11 @@ const pointSchema = new Schema({
   type: {
     type: String,
     enum: ['Point'],
-    required: true
+    required: false
   },
   coordinates: {
     type: [Number],
-    required: true
+    required: false
   }
 });
 
@@ -21,7 +21,7 @@ const EventSchema = new Schema(
     location: pointSchema,
     date: { type: Date, required: true },
     time: { type: String, required: true },
-    duration: { type: String, required: true },
+    duration: { type: String, required: false },
     links: { type: String },
     orgId: { type: Schema.Types.ObjectId, ref: "Org", required: true },
     categoryId: { type: Schema.Types.ObjectId, ref: "Category" },
